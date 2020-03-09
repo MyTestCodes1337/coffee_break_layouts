@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive-768.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive-480.css">
+</head>
+<body>
+	<div id="modal" class="search__form">
+		<form>
+			<div class="search__form_group">
+				<span data-target="#modal" class="dismiss">&times;</span>
+				<img src="assets/search.svg">
+				<input type="text" name="q" class="search__input" placeholder="Search">
+				<button class="search__submit">Search</button>
+			</div>
+		</form>
+	</div>
+
+	<nav class="header__nav">
+		<div class="container">
+			<a href="#" class="brandname">
+				CoffeeBreak &lt;br /&gt;
+			</a>
+			<button class="toggle_btn">
+				<span>+</span>
+			</button>
+			<ul>
+				<li class="active">
+					<a href="#header">Home</a>
+				</li>
+				<li>
+					<a href="#profile">Profile</a>
+				</li>
+				<li>
+					<a href="#product">Product</a>
+				</li>
+				<li>
+					<a href="#articles">Articles</a>
+				</li>
+				<li>
+					<a href="#contact">Contact Us</a>
+				</li>
+				<li class="search">
+					<button href="#" onclick="searchForm()">Search</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="detail-product mt-6 pt-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-5">
+					<div class="detail-product__image-container">
+						<img id="image_product" src="assets/product_1.png">
+					</div>
+				</div>
+				<div class="col-md-8 col-sm-7">
+					<div class="detail-product__content">
+						<h2 class="detail-product__content__title mb-4" id="title_product">Test Product</h2>
+						<table class="table-responsive">
+							<tr>
+								<td>
+									
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<footer>
+		<div class="container">
+			&copy; Allright Reserved 2020. <a href="#">Torabika Uwu</a>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript">
+
+		let data = []
+		let target = document.querySelector('#product__json')
+
+		let construct = (name,categories,cost,image,label=null,discount=null) => {
+			if(label != null){
+				if(label == 'discount'){
+					data.push({
+						name: name,
+						categories: categories,
+						cost: cost,
+						image: image,
+						label: label,
+						discount: discount
+					})
+				}else if(label == 'new-product'){
+					data.push({
+						name: name,
+						categories: categories,
+						cost: cost,
+						image: image,
+						label: label
+					})
+				}
+			}else{
+				data.push({
+					name: name,
+					categories: categories,
+					cost: cost,
+					image: image
+				})
+			}}
+
+		let setup = (content) => {
+
+
+			if(labeled != ""){
+				finalMockUp = mockup+labeled+mockup1
+			}else {
+				finalMockUp = mockup+mockup1
+			}
+			target.innerHTML += finalMockUp
+		}
+
+		construct("Luwak 1","Latte",34,"assets/product_1.png","discount",10)
+		construct("Tubruk 1","Kopi Tubruk",14,"assets/product_2.png","new-product")
+		construct("Luwak 1","Luwak",32,"assets/product_3.png")
+		construct("Luwak 2","Luwak",24,"assets/product_1.png")
+		construct("Latte 2","Latte",92,"assets/product_2.png","discount",20)
+		construct("Latte 3","Latte",92,"assets/product_2.png","discount",5)
+
+		let showAllProduct=() => {
+			target.innerHTML = ""
+			data.forEach(row => {
+				setup(row)
+			})
+		}
+
+		let showProduct = (cat) => {
+			let dataShow = [];
+			target.innerHTML = ""
+			data.forEach(row => {
+				if(row.categories.toLowerCase().includes(cat.toLowerCase())){
+					dataShow.push(row)
+				}
+			})
+
+			dataShow.forEach(row => {
+				setup(row)
+			})
+		}
+
+
+		showAllProduct()
+
+	</script>
+</body>
+</html>

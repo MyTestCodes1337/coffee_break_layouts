@@ -1,0 +1,19 @@
+@media only screen and (max-width: 480px){
+	.header__nav .brandname {
+		margin: auto 0;
+		font-size: 18px;
+	}
+
+	.articles__box.primary .articles__image_container {
+		display: block;
+	}
+
+	.articles__box .articles__image_container,
+	.articles__box.secondary .articles__image_container {
+		display: none;
+	}
+	.articles__box .articles__content,
+	.articles__box.secondary .articles__content {
+		width: 100%;
+	}
+}
