@@ -130,10 +130,10 @@
 		<div class="container pt-3">
 			<h2 class="section__title pb-3">Product</h2>
 			<div class="filter__area pv-2">
-				<button onclick="showAllProduct()" class="active">Show All Product</button> / 
-				<button onclick="showProduct('latte')">Latte Variant</button> /
-				<button onclick="showProduct('tubruk')">Coffee Tubruk Variant</button> / 
-				<button onclick="showProduct('luwak')">Coffee Luwak Variant</button>
+				<button onclick="showAllProduct(this)" class="active">Show All Product</button> / 
+				<button onclick="showProduct(this,'latte')">Latte Variant</button> /
+				<button onclick="showProduct(this,'tubruk')">Coffee Tubruk Variant</button> / 
+				<button onclick="showProduct(this,'luwak')">Coffee Luwak Variant</button>
 			</div>
 			<div class="row pv-5" id="product__json">
 			</div>
@@ -350,14 +350,25 @@
 		construct("Latte 2","Latte",92,"assets/product_2.png","discount",20)
 		construct("Latte 3","Latte",92,"assets/product_2.png","discount",5)
 
-		let showAllProduct=() => {
+		let showAllProduct=(ev) => {
+			let activeBtn = document.querySelector('.filter__area').querySelector('.active');
+			print(ev)
+			if(activeBtn != null) {
+				activeBtn.className = "";
+			}
+			ev.className = "active";
 			target.innerHTML = ""
 			data.forEach(row => {
 				setup(row)
 			})
 		}
 
-		let showProduct = (cat) => {
+		let showProduct = (ev,cat) => {
+			let activeBtn = document.querySelector('.filter__area').querySelector('.active');
+			if(activeBtn != null) {
+				activeBtn.className = "";
+			}
+			ev.className = "active";
 			let dataShow = [];
 			target.innerHTML = ""
 			data.forEach(row => {
@@ -372,7 +383,7 @@
 		}
 
 
-		showAllProduct()
+		showAllProduct(document.querySelector('.filter__area button.active'))
 
 	</script>
 </body>
