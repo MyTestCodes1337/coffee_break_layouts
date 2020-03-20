@@ -46,13 +46,18 @@
 			margin: auto;
 		}
 
-		.mg-auto {
+		.box_error {
 			margin: auto!important;
-			border: 1px solid #efefef;
 			height: 100%;
 			padding: 40px;
-			box-shadow: 0 0 10px #efefef;
 			border-radius: 10px;
+			transition: .3s;
+			box-shadow: 0 0 20px #eaeaea;
+			border: 1px solid transparent;
+		}
+
+		.box_error:hover {
+			border: 1px solid #eaeaea;
 		}
 
 	</style>
@@ -64,7 +69,7 @@
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<img src="assets/error_image.png">
 				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12 mg-auto">
+				<div class="col-md-6 col-sm-6 col-xs-12 box_error">
 					<h1>500 Internal Server Error</h1>
 					<h2>Ohhh snap...</h2>
 					<p class="error_text">Something went wrong, Please call Administrator.</p>

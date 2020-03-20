@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<style type="text/css">
+		html{
+			font-family: Poppins;
+		}
+		body {
+			background-image: url('assets/login.jpg');
+			background-size: cover;
+			height: 100vh;
+			margin: 0;
+			font-size: 14px;
+			color: #666;
+		}
+		h1 {
+			font-size: 24px;
+			margin: 0 auto;
+			text-align: center;
+			color: #11151a;
+		}
+		h2 {
+			font-size: 42px;
+			margin: 0;
+		}
+		.login_page img {
+		}
+		.error_text {
+			color: #aaa;
+		}
+		a {
+			color: #55a3d1;
+			padding: 5px 0;
+			text-decoration: none;
+		}
+		.container {
+			width: 80%;
+			margin: auto;
+		}
+
+
+
+		.boxed {
+			margin: auto!important;
+			padding: 40px;
+			box-shadow: 0 0 10px #efefef;
+			border-radius: 10px;
+			background-color: rgba(255,255,255,.9);
+		}
+		.m-auto {
+			margin: 0 auto
+		}
+
+		.boxed__content {
+			padding-top: 30px;
+		}
+		.boxed__content .form-group {
+			padding: 10px 0;
+		}
+
+		.boxed__content .form-group label {
+			margin-bottom: 5px;
+		}
+		.boxed__content .form-group input {
+			width: 100%;
+			padding: 5px;
+			border: 1px solid #eee;
+			border-radius: 3px;
+		}
+		.btn {
+			margin: 0 auto;
+			border: 1px solid transparent;
+			padding: 10px 20px;
+			display: block;
+			border-radius: 4px;
+		}
+		.btn-primary {
+			background-color: #3465D9;
+			color: #fff;
+		}
+		.boxed__content .form-group button {
+			margin: 0 auto;
+		}
+
+		.img-responsive {
+			margin: 0 auto;
+			width: 100%;
+			height: 100px;
+			/*max-height: ;*/
+		}
+
+		label {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="login_page">
+		<div class="container pv-6">
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12 m-auto">
+					<div class="boxed">
+						<h1 class="boxed__title">Login Page</h1>
+						<div class="boxed__content">
+							<form id="login" class="form">
+								<div class="form-group">
+									<label for="username" class="form-control">Username</label>
+									<input id="username" type="text" name="" class="form-control w-100"  autocomplete="off">
+								</div>
+								<div class="form-group">
+									<label for="password" class="form-control">Password</label>
+									<input id="password" type="text" name="" class="form-control w-100"  autocomplete="off">
+								</div>
+								<div class="form-group">
+									<button class="btn btn-primary">Login</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
