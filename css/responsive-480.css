@@ -3,6 +3,9 @@
 		margin: auto 0;
 		font-size: 18px;
 	}
+	#profile .section__text {
+		width: 100%;
+	}
 
 	.articles__box.primary .articles__image_container {
 		display: block;
